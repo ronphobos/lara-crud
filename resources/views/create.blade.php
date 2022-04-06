@@ -19,6 +19,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Model</th>
+                    <th scope="col">Accueil</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +28,9 @@
                     <th scope="row">{{ $v->id }}</th>
                     <td>{{ $v->nom }}</td>
                     <td>{{ $v->model }}</td>
+                    <td>
+                        <a href="{{ route('voiture.edit', $v->id) }}"><button type="button" class="btn btn-success">E</button></a>
+                        <a href=""><button type="button" class="btn btn-danger">D</button></td></a>
                     </tr>
                     @endforeach
 
