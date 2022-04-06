@@ -72,6 +72,7 @@ class VoitureController extends Controller
     public function edit(Voiture $voiture)
     {
         //
+        return view('edit', compact('voiture'));
     }
 
     /**
@@ -84,6 +85,14 @@ class VoitureController extends Controller
     public function update(Request $request, Voiture $voiture)
     {
         //
+         $voi = $this->validate($request, [
+                'nom' => '',
+                'model' => '',
+            ]);
+
+            Voiture::update($voi);
+
+            return redirect()->back();
     }
 
     /**
