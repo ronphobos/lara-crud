@@ -11,15 +11,28 @@
 
     <div class="container">
         <div class="row">
-             @include('nav') 
+             @include('nav')
 
-            <ul class="list-group">
+             <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($voiture as $v)
+                    <tr>
+                    <th scope="row">{{ $v->id }}</th>
+                    <td>{{ $v->nom }}</td>
+                    <td>{{ $v->model }}</td>
+                    </tr>
+                    @endforeach
 
-            @foreach ($voiture as $v)
-            <li class="list-group-item">{{ $v->nom }} </li>
-            <li class="list-group-item">{{ $v->model }}</li>
-            @endforeach
-            </ul>
+
+                </tbody>
+                </table>
         </div>
     </div>
 
